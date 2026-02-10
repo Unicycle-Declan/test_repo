@@ -105,7 +105,7 @@ fenergy <- energy %>%
 
 ```
 
-```{r}
+```{r, echo=FALSE, warning=FALSE}
 library(ggplot2)
 library(plotly)
 p <- ggplot(fenergy,
