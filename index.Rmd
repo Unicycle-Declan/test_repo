@@ -118,4 +118,4 @@ p <- ggplot(fenergy,
 ggplotly(p)
 ```
 
-## bring in some more data sets
+## Bring in some more data sets 
