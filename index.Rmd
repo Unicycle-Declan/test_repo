@@ -46,6 +46,7 @@ Should be more space now.
 first pput an image inside the folder where your `Rmd` file is located. Then type `![](full_immage-filename-here){width = "50%"}`
 
 ![](../images/Instagram.jpg){width="50%"}
+
 # RMarkdown
 
 `RMarkdown` is just `Markdwon` with`R` code woven in.
@@ -93,5 +94,28 @@ energy %>% names
 energy %>% head
 energy %>% tail
 energy %>% pull(Technology) %>% unique %>% sort
+energy %>% pull(`Country/area`) %>% unique
 
 ```
+### Filtering code now
+```{r}
+# filter data
+fenergy <- energy %>%
+  filter(`Country/area` == 'United States of America (the)')
+
+```
+
+```{r}
+library(ggplot2)
+library(plotly)
+p <- ggplot(fenergy,
+       aes( x = Year,
+            y = as.numeric(`Electricity statistics`),
+            fill = Technology
+            )) +
+  geom_area()
+
+ggplotly(p)
+```
+
+## bring in some more data sets
